@@ -1,0 +1,6 @@
+machine api.heroku.com
+  login maxwendelffaraujo@alu.ufc.br
+  password a3ccbbb7-a017-48e2-9361-0c7cce60f5c4
+machine git.heroku.com
+  login maxwendelffaraujo@alu.ufc.br
+  password a3ccbbb7-a017-48e2-9361-0c7cce60f5c4
