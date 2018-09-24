@@ -29,7 +29,9 @@ jobs:
           - v1-dependencies-{{ checksum "pom.xml" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
+      
+      # run tests!
+      - run: mvn integration-test
       - run: mvn dependency:go-offline
 
       - save_cache:
@@ -40,5 +42,4 @@ jobs:
       - store_artifacts: # store the uberjar as an artifact
           path: target/monolitica.war
       
-      # run tests!
-      - run: mvn integration-test
+      
