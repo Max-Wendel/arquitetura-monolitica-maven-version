@@ -37,5 +37,8 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
         
+      - store_artifacts: # store the uberjar as an artifact
+          path: target/monolitica.war
+      
       # run tests!
       - run: mvn integration-test
