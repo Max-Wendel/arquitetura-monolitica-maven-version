@@ -39,6 +39,7 @@
 3 - Criar o Banco
   - Criar um banco no postgres chamado "monolitica"
   
+  
 # Utilizando Aplicação
 
 1 - Logar no sistema
