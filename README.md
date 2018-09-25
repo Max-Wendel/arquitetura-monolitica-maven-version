@@ -19,6 +19,7 @@
     </driver>
  </datasources>
  ```
+ 
 
 2 - Configurar DataSource no Wildfly
   - Adicionar nova configuração de datasource
