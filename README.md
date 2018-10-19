@@ -49,4 +49,10 @@
 - email: teste@gmail.com
 - senha: 123
 
-  
+ ### Tarefas 
+ 1. Revisar e configurar o _pom.xml_.
+ 2. Entender e configurar o ciclo de vida do _maven_.
+ 3. Implementar uma Integração Continua.
+ 4. Implementar _Continuous Integration_, _Continuous Delivery_ e _Continuous Deployment_.
+ 5. Adicionar análises estática de código ao projeto (_Findbugs_ no caso).
+ 6. ...
