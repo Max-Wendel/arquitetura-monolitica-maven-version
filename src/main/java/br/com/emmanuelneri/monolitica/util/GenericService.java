@@ -26,8 +26,8 @@ public abstract class GenericService<T extends Model<ID>, ID extends Serializabl
             }
         } while ((clazz = clazz.getSuperclass()) != null);
 
-        this.type = (Class<T>) ((ParameterizedType) clazz
-                .getGenericSuperclass()).getActualTypeArguments()[0];
+//        this.type = (Class<T>) ((ParameterizedType) clazz
+//                .getGenericSuperclass()).getActualTypeArguments()[0];
     }
 
     public T findById(Long id) {
