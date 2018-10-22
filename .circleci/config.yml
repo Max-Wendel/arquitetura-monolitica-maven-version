@@ -31,11 +31,11 @@ jobs:
           - v1-dependencies-
       
       # run tests!
-      - run: mvn spotbugs:check
-      - run: mvn validate
       - run: mvn integration-test
       - run: mvn dependency:go-offline
-
+      - run: mvn spotbugs:check
+      - run: mvn validate
+      
       - save_cache:
           paths:
             - ~/.m2
