@@ -146,6 +146,13 @@
             <artifactId>rewrite-integration-cdi</artifactId>
             <version>${rewrite.version}</version>
         </dependency>
+
+        <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs</artifactId>
+            <version>3.1.8</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -192,17 +199,9 @@
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-maven-plugin</artifactId>
             <version>3.1.7</version>
-            <dependencies>
-                <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
-                <dependency>
-                    <groupId>com.github.spotbugs</groupId>
-                    <artifactId>spotbugs</artifactId>
-                    <version>3.1.8</version>
-                </dependency>
-            </dependencies>
             <configuration>
-                <effort>Min</effort>
-                <threshold>High</threshold>
+                <effort>Max</effort>
+                <threshold>Low</threshold>
                 <bugCategories>MALICIOUS_CODE,SECURITY,STYLE,CORRECTNESS</bugCategories>
             <includeFilterFile>${session.executionRootDirectory}/includeFilterFile.xml</includeFilterFile>
 <!--            <excludeFilterFile>${session.executionRootDirectory}/excludeFilterFile.xml</excludeFilterFile> --> 
