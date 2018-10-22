@@ -19,7 +19,7 @@ import java.util.List;
 })
 public class TopVeiculosController implements Serializable {
 
-    private List<VeiculoRankingVo> veiculos;
+    private transient List<VeiculoRankingVo> veiculos;
 
     @Inject
     private PedidoService pedidoService;
