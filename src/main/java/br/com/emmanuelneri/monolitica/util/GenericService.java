@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 public abstract class GenericService<T extends Model<ID>, ID extends Serializable> implements Serializable {
@@ -24,7 +23,8 @@ public abstract class GenericService<T extends Model<ID>, ID extends Serializabl
             if (clazz.getSuperclass().equals(GenericService.class)) {
                 break;
             }
-        } while ((clazz = clazz.getSuperclass()) != null);
+            clazz = clazz.getSuperclass();
+        } while (clazz != null);
 
 //        this.type = (Class<T>) ((ParameterizedType) clazz
 //                .getGenericSuperclass()).getActualTypeArguments()[0];

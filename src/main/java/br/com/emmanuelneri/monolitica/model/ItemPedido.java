@@ -72,8 +72,8 @@ public class ItemPedido implements Model<Long> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ItemPedido that = (ItemPedido) o;
-        return Objects.equals(valorUnitario, that.valorUnitario) &&
-                Objects.equals(veiculo, that.veiculo);
+        return Objects.equals(valorUnitario, that.valorUnitario)
+        && Objects.equals(veiculo, that.veiculo);
     }
 
     @Override

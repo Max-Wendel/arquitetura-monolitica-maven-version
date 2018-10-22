@@ -51,8 +51,8 @@ public class ClienteController extends AbstractCrudController<Cliente> {
     }
 
     @Override
-    public Cliente setObjeto(Cliente cliente) {
-        return objeto = cliente;
+    public void setObjeto(Cliente cliente) {
+        this.objeto = cliente;
     }
 
 }

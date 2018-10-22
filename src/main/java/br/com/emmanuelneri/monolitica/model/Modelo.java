@@ -51,8 +51,9 @@ public class Modelo implements Model<Long> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
         Modelo modelo = (Modelo) o;
 
         if (nome != null ? !nome.equals(modelo.nome) : modelo.nome != null) return false;
