@@ -182,6 +182,12 @@
                 <version>1.2.2.Final</version>
             </plugin>
 
+            <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.9.67</version>
+            </plugin>
+
          <plugin>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-maven-plugin</artifactId>
@@ -198,6 +204,8 @@
                 <effort>Min</effort>
                 <threshold>High</threshold>
                 <bugCategories>MALICIOUS_CODE,SECURITY,STYLE,CORRECTNESS</bugCategories>
+            <includeFilterFile>${session.executionRootDirectory}/includeFilterFile.xml</includeFilterFile>
+<!--            <excludeFilterFile>${session.executionRootDirectory}/excludeFilterFile.xml</excludeFilterFile> --> 
             </configuration>
         </plugin>
 
