@@ -194,6 +194,11 @@
                     <version>3.1.8</version>
                 </dependency>
             </dependencies>
+            <configuration>
+                <effort>Min</effort>
+                <threshold>High</threshold>
+                <bugCategories>MALICIOUS_CODE,SECURITY,STYLE,CORRECTNESS</bugCategories>
+            </configuration>
         </plugin>
 
          <plugin>
