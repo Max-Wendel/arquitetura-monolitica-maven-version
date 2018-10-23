@@ -43,5 +43,9 @@ jobs:
         
       - store_artifacts: # store the uberjar as an artifact
           path: target/monolitica.war
+      - store_artifacts: # store the uberjar as an artifact
+          path: target/checkstyle-result.xml
+      - store_artifacts: # store the uberjar as an artifact
+          path: target/spotbugsXml.xml
       
       
