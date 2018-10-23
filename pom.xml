@@ -200,10 +200,10 @@
             <artifactId>spotbugs-maven-plugin</artifactId>
             <version>3.1.7</version>
             <configuration>
-                <effort>Max</effort>
-                <threshold>Low</threshold>
-                <bugCategories>MALICIOUS_CODE,SECURITY,STYLE,CORRECTNESS</bugCategories>
-            <includeFilterFile>${session.executionRootDirectory}/includeFilterFile.xml</includeFilterFile>
+                <effort>Min</effort>
+                <threshold>High</threshold>
+                <bugCategories>BAD_PRATICE,MALICIOUS_CODE,SECURITY,STYLE,CORRECTNESS</bugCategories>
+            <!-- <includeFilterFile>${session.executionRootDirectory}/includeFilterFile.xml</includeFilterFile> -->
 <!--            <excludeFilterFile>${session.executionRootDirectory}/excludeFilterFile.xml</excludeFilterFile> --> 
             </configuration>
         </plugin>

@@ -60,8 +60,9 @@ public class VeiculoController extends AbstractCrudController<Veiculo> {
     }
 
     @Override
-    public void setObjeto(Veiculo veiculo) {
+    public Veiculo setObjeto(Veiculo veiculo) {
         this.objeto = veiculo;
+        return this.objeto;
     }
 
     public List<Modelo> getModelos() {

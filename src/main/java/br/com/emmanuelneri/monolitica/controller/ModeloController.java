@@ -57,8 +57,9 @@ public class ModeloController extends AbstractCrudController<Modelo> {
     }
 
     @Override
-    public void setObjeto(Modelo modelo) {
+    public Modelo setObjeto(Modelo modelo) {
         this.objeto = modelo;
+        return this.objeto;
     }
 
     public List<Marca> getMarcas() {
