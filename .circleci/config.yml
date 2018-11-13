@@ -35,6 +35,7 @@ jobs:
       - run: mvn dependency:go-offline
       - run: mvn spotbugs:check
       - run: mvn validate
+      - run: mvn test
       
       - save_cache:
           paths:
