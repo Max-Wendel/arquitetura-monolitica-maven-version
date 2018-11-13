@@ -118,7 +118,12 @@
             <artifactId>deltaspike-core-impl</artifactId>
             <version>${deltaspike.version}</version>
         </dependency>
-
+        <dependency>
+			<groupId>org.codehaus.sonar</groupId>
+			<artifactId>sonar-plugin-api</artifactId>
+			<version>5.1</version>
+			<scope>provided</scope>
+		</dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -145,6 +150,40 @@
             <groupId>org.ocpsoft.rewrite</groupId>
             <artifactId>rewrite-integration-cdi</artifactId>
             <version>${rewrite.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.21.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!--Mockito fornece uma implementação para extensões JUnit5 na biblioteca-->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>2.23.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--Dependencias para compatibilidades de ferramentas que não possuem suporte ao Junit 5-->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>1.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.2.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
@@ -202,7 +241,6 @@
             <configuration>
                 <effort>Min</effort>
                 <threshold>High</threshold>
-                <bugCategories>BAD_PRATICE,MALICIOUS_CODE,SECURITY,STYLE,CORRECTNESS</bugCategories>
             <!-- <includeFilterFile>${session.executionRootDirectory}/includeFilterFile.xml</includeFilterFile> -->
 <!--            <excludeFilterFile>${session.executionRootDirectory}/excludeFilterFile.xml</excludeFilterFile> --> 
             </configuration>
@@ -221,7 +259,6 @@
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
-                            <linkXRef>false</linkXRef>
                             <suppressionsLocation>supress.xml</suppressionsLocation>
                             <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
                         </configuration>
@@ -252,6 +289,19 @@
                 </execution>
             </executions>
         </plugin>
+
+        <plugin>
+           <artifactId>maven-surefire-plugin</artifactId>
+           <version>2.19.1</version>
+              <dependencies>
+                <dependency>
+                   <groupId>org.junit.platform</groupId>
+                   <artifactId>junit-platform-surefire-provider</artifactId>
+                   <version>1.0.1</version>
+                 </dependency>
+              </dependencies>
+         </plugin>
+
 
         </plugins>
 
