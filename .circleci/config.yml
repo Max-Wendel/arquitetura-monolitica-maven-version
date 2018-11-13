@@ -33,6 +33,7 @@ jobs:
       # run tests!
       - run: mvn integration-test
       - run: mvn dependency:go-offline
+      - run: mvn clean install
       - run: mvn spotbugs:check
       - run: mvn validate
       
