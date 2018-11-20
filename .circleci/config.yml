@@ -31,11 +31,10 @@ jobs:
           - v1-dependencies-
       
       # run tests!
-      #- run: mvn integration-test
+      - run: mvn integration-test
       - run: mvn dependency:go-offline
       - run: mvn spotbugs:check
       - run: mvn validate
-      - run: mvn test
       
       - save_cache:
           paths:
@@ -48,5 +47,7 @@ jobs:
           path: target/checkstyle-result.xml
       - store_artifacts: # store the uberjar as an artifact
           path: target/spotbugsXml.xml
+      - store_artifacts: 
+          path: target/sites/jacoco/index.html
       
       
