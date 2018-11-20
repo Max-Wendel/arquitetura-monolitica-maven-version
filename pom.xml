@@ -214,6 +214,9 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<fork>true</fork>
+          			<meminitial>128m</meminitial>
+          			<maxmem>512m</maxmem>
 				</configuration>
 			</plugin>
 			<plugin>
