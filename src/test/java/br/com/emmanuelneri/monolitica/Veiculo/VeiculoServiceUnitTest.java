@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -24,7 +25,7 @@ public class VeiculoServiceUnitTest {
 	@Test
 	public void TestaCadastrarVeiculo() {
 		veiculoService.save(veiculo);
-		when(veiculoService.findById(veiculo.getId())).thenReturn(veiculo);
+		Mockito.lenient().when(veiculoService.findById(veiculo.getId())).thenReturn(veiculo);
 		verify(veiculoService, atMost(10)).save(veiculo);
 	}
 }

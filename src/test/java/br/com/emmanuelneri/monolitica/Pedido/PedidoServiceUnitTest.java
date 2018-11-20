@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -58,7 +59,7 @@ public class PedidoServiceUnitTest {
 
 	@Test
 	public void findPedidoCompletoByIdTest() throws ValidationException {
-		when(pedidoService.findById((long)2)).thenReturn(pedidos.get(1));		
+		Mockito.lenient().when(pedidoService.findById((long)2)).thenReturn(pedidos.get(1));		
 		verify(pedidoService, atMost(10)).update(pedido);
 	}
 
@@ -69,7 +70,7 @@ public class PedidoServiceUnitTest {
 
 	@Test
 	public void FindPedidoCompletoByIdTest() {
-		when(pedidoService.findPedidoCompletoById(pedido.getId())).thenReturn(pedido);
+		Mockito.lenient().when(pedidoService.findPedidoCompletoById(pedido.getId())).thenReturn(pedido);
 		verify(pedidoService, atMost(10)).findPedidoCompletoById(pedido.getId());
 	}
 

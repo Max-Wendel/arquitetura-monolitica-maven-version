@@ -45,7 +45,7 @@ public class ItemPedidoServiceUnitTest {
 	@Test
 	public void TestarSalvarItemPedido() {
 		itemPedidoService.save(itemPedido);
-		when(itemPedidoService.findById(itemPedido.getId())).thenReturn(itemPedido);
+		Mockito.lenient().when(itemPedidoService.findById(itemPedido.getId())).thenReturn(itemPedido);
 		verify(itemPedidoService, atMost(10)).save(itemPedido);
 	}
 	

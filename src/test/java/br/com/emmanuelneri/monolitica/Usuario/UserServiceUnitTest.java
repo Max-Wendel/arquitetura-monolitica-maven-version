@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -24,7 +25,7 @@ public class UserServiceUnitTest{
     @Test
     public void testaCadastrarUsuario() {
     	usuarioService.save(usuario);
-    	when(usuarioService.buscaParaLogin(usuario.getEmail())).thenReturn(usuario);
+    	Mockito.lenient().when(usuarioService.buscaParaLogin(usuario.getEmail())).thenReturn(usuario);
     	verify(usuarioService, atMost(10)).save(usuario);
     }
     
