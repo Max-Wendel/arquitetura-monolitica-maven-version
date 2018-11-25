@@ -44,7 +44,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          paths:
+            #Sonar-cloud files cache
             - ~/.sonar/cache
           key: v1-dependencies-{{ checksum "pom.xml" }}
         
