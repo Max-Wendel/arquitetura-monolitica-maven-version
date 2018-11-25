@@ -35,11 +35,7 @@ jobs:
       - run: mvn dependency:go-offline
       - run: mvn spotbugs:check
       - run: mvn clean install
-      - run: mvn sonar:sonar \
-            -Dsonar.projectKey=Max-Wendel-UFC_arquitetura-monolitica-maven-version \
-            -Dsonar.organization=max-wendel-ufc-github \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=1eec5782cd1b193019215d4d8e70976d40658cf4
+      - run: mvn sonar:sonar -Dsonar.projectKey=Max-Wendel-UFC_arquitetura-monolitica-maven-version -Dsonar.organization=max-wendel-ufc-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=1eec5782cd1b193019215d4d8e70976d40658cf4
 
       - save_cache:
           paths:
