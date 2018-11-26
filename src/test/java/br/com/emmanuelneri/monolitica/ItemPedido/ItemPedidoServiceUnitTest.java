@@ -1,8 +1,13 @@
 package br.com.emmanuelneri.monolitica.ItemPedido;
 
+import static org.hamcrest.CoreMatchers.isA;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.atMost;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -44,9 +49,30 @@ public class ItemPedidoServiceUnitTest {
 	
 	@Test
 	public void TestarSalvarItemPedido() {
-		itemPedidoService.save(itemPedido);
-		Mockito.lenient().when(itemPedidoService.findById(itemPedido.getId())).thenReturn(itemPedido);
-		verify(itemPedidoService, atMost(10)).save(itemPedido);
+		ItemPedido item = mock(ItemPedido.class);
+		
+		doNothing().when(itemPedidoService).save(item);
+		itemPedidoService.save(item);
+		
+		verify(itemPedidoService, times(1)).save(item);
+	}
+	
+	@Test
+	public void TestarGetters() {
+		ItemPedido item = itens.get(0);
+		
+		int qtd = item.getQuantidade();
+		BigDecimal v_unitario = item.getValorUnitario();
+		BigDecimal v_total = item.getValorTotal();
+		Veiculo veiculo = item.getVeiculo();
+		
+		doNothing().when(itemPedidoService).save(itemPedido);
+		itemPedidoService.save(new ItemPedido(v_unitario.add(v_total), qtd+1, veiculo));
+		
+		verify(itemPedidoService, times(1)).save(new ItemPedido(v_unitario.add(v_total), qtd+1, veiculo));
+	
+		
+		
 	}
 	
 	@Test
