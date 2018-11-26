@@ -1,15 +1,11 @@
 package br.com.emmanuelneri.monolitica.ItemPedido;
 
-import static org.hamcrest.CoreMatchers.isA;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.atMost;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -29,7 +25,7 @@ import br.com.emmanuelneri.monolitica.service.ItemPedidoService;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
-public class ItemPedidoServiceUnitTest {
+public class ItemPedidoUnitTests {
 	
 	@Mock ItemPedido itemPedido;
 	@Mock ItemPedidoService itemPedidoService;
@@ -70,9 +66,6 @@ public class ItemPedidoServiceUnitTest {
 		itemPedidoService.save(new ItemPedido(v_unitario.add(v_total), qtd+1, veiculo));
 		
 		verify(itemPedidoService, times(1)).save(new ItemPedido(v_unitario.add(v_total), qtd+1, veiculo));
-	
-		
-		
 	}
 	
 	@Test
