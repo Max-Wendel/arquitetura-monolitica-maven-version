@@ -25,7 +25,7 @@ import br.com.emmanuelneri.monolitica.service.ItemPedidoService;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
-public class ItemPedidoUnitTests {
+public class ItemPedidoServiceUnitTest {
 	
 	@Mock ItemPedido itemPedido;
 	@Mock ItemPedidoService itemPedidoService;
