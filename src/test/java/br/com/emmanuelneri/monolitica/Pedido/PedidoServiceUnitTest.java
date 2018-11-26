@@ -21,6 +21,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import br.com.emmanuelneri.monolitica.controller.PedidoController;
 import br.com.emmanuelneri.monolitica.exception.ValidationException;
 import br.com.emmanuelneri.monolitica.model.Pedido;
 import br.com.emmanuelneri.monolitica.model.Usuario;
@@ -32,6 +33,7 @@ public class PedidoServiceUnitTest {
 
 	@Mock Pedido pedido;
 	@Mock PedidoService pedidoService;
+	@Mock PedidoController pedidoController;
 	@Mock Usuario usuario;
 
 	ArrayList<Pedido> pedidos;
