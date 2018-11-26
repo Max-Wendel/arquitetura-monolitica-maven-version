@@ -66,7 +66,7 @@ public class ItemPedidoServiceUnitTest {
 		BigDecimal v_total = item.getValorTotal();
 		Veiculo veiculo = item.getVeiculo();
 		
-		doNothing().when(itemPedidoService).save(itemPedido);
+		Mockito.lenient().doNothing().when(itemPedidoService).save(itemPedido);
 		itemPedidoService.save(new ItemPedido(v_unitario.add(v_total), qtd+1, veiculo));
 		
 		verify(itemPedidoService, times(1)).save(new ItemPedido(v_unitario.add(v_total), qtd+1, veiculo));
