@@ -83,7 +83,7 @@ public class ItemPedidoServiceUnitTest {
 	
 	@Test
 	public void TestarFindAllNaoNulo() {
-		Mockito.when(itemPedidoService.findAll()).thenReturn(itens);
+		Mockito.lenient().when(itemPedidoService.findAll()).thenReturn(itens);
 		assertNotNull(itemPedidoService.findAll());
 	}
 }

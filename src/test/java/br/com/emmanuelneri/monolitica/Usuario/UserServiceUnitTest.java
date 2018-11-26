@@ -1,6 +1,7 @@
 package br.com.emmanuelneri.monolitica.Usuario;
 
 import static org.hamcrest.CoreMatchers.isA;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.atMost;
 import static org.mockito.Mockito.doNothing;
@@ -82,6 +83,11 @@ public class UserServiceUnitTest{
     	verify(usuarioService).update(teste);
     }
     
+    @Test
+    public void testaFindAllNaoNulo() {
+    	Mockito.lenient().when(usuarioService.findAll()).thenReturn(usuarios);
+		assertNotNull(usuarioService.findAll());
+    }
     
     
     

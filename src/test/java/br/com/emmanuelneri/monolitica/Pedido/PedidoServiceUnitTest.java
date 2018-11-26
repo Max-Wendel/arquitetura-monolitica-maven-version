@@ -1,8 +1,12 @@
 package br.com.emmanuelneri.monolitica.Pedido;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.atMost;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mockitoSession;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -51,10 +55,20 @@ public class PedidoServiceUnitTest {
 
 	@Test
 	public void SalvarTest() throws ValidationException {
+		Mockito.doNothing().when(pedidoService).salvar(pedido);
+		
 		pedidoService.salvar(pedido);
-		when(pedidoService.findById((long)1)).thenReturn(pedidos.get(0));
-		assertTrue(pedidoService.findById((long)1).equals(pedidos.get(0)));
-		verify(pedidoService, atMost(10)).save(pedido);
+		
+		verify(pedidoService,times(1)).salvar(pedido);
+	}
+	
+	@Test
+	public void TestarSave() throws ValidationException {
+		Mockito.doNothing().when(pedidoService).save(pedido);
+		
+		pedidoService.save(pedido);
+		
+		verify(pedidoService,times(1)).save(pedido);
 	}
 
 	@Test
@@ -65,13 +79,23 @@ public class PedidoServiceUnitTest {
 
 	@Test
 	public void finalizarTest() {
-		verify(pedidoService, atMost(10)).finalizar(pedido);
+		Mockito.doNothing().when(pedidoService).finalizar(pedidos.get(1));
+		
+		pedidoService.finalizar(pedidos.get(1));
+		
+		verify(pedidoService, atMost(10)).finalizar(pedidos.get(1));
 	}
 
 	@Test
 	public void FindPedidoCompletoByIdTest() {
 		Mockito.lenient().when(pedidoService.findPedidoCompletoById(pedido.getId())).thenReturn(pedido);
 		verify(pedidoService, atMost(10)).findPedidoCompletoById(pedido.getId());
+	}
+	
+	@Test
+	public void TestaFindAllNaoNulo() {
+		Mockito.lenient().when(pedidoService.findAll()).thenReturn(pedidos);
+		assertNotNull(pedidoService.findAll());
 	}
 
 }
