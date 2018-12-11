@@ -9,7 +9,6 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 
-
 	<properties>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<cdi.version>1.1</cdi.version>
@@ -281,7 +280,21 @@
 					</execution>
 				</executions>
 			</plugin>
-
+        	
+			<plugin>
+        	    <groupId>com.lazerycode.jmeter</groupId>
+        	    <artifactId>jmeter-maven-plugin</artifactId>
+        	    <version>2.1.0</version>
+            	<executions>
+                	<execution>
+                    	<id>jmeter-tests</id>
+                    	<goals>
+                    	    <goal>jmeter</goal>
+                	    </goals>
+           		     </execution>
+            	</executions>
+        	</plugin>
+			
 			<plugin>
   				<groupId>org.apache.maven.plugins</groupId>
   				<artifactId>maven-surefire-plugin</artifactId>

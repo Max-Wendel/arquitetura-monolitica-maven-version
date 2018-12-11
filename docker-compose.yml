@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+    postgres:
+      image: postgres:9.6.1
+      ports: 
+        - "5433:5432"
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+
+    wildfly:
+      image: wendelmax37/wildfly-postgres:1.1
+      build: .
+      ports:
+        - "8080:8080"
+      dns: 8.8.8.8
+      environment:
+        - DB_NAME=monolitica
+        - DB_PASS=postgres
+        - DB_USER=postgres
+        - DB_HOST=postgres
+        - DS_NAME=MonoliticaDS
+        - JNDI_NAME=java:jboss/jdbc/MonoliticaDS
+      depends_on:
+        - postgres
