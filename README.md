@@ -1,4 +1,8 @@
-#Arquitetura
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=Max-Wendel-UFC_arquitetura-monolitica-maven-version&metric=alert_status)
+
+[![CircleCI](https://circleci.com/gh/Max-Wendel-UFC/arquitetura-monolitica-maven-version/tree/master.svg?style=svg)](https://circleci.com/gh/Max-Wendel-UFC/arquitetura-monolitica-maven-version/tree/master)
+
+# Arquitetura
 ![alt tag](https://github.com/emmanuelneri/arquitetura-monolitica/blob/master/arquitetura-monolotica.png)
 
 #Requisitos
@@ -57,4 +61,5 @@
  5. Adicionar análises estática de código ao projeto (_Findbugs_ e _Checkstyle_ no caso).
  6. Criar testes unitários com _Junit_ e _Mockito_.
  7. Criar testes sistêmicos com _Jmeter_, em um ambiente de homologação.
- 8. Criar um _Dockerfile_ e um _docker-compose_ para a entrega final.
+ 8. Adicionar uma cobertura de código, que deve ser vista por uma ferramenta (cobertura com Jacoco vista com sonarcloud).
+ 9. Criar um _Dockerfile_ e um _docker-compose_ para a entrega final.
