@@ -54,5 +54,7 @@
  2. Entender e configurar o ciclo de vida do _maven_.
  3. Implementar uma Integração Continua.
  4. Implementar _Continuous Integration_, _Continuous Delivery_ e _Continuous Deployment_.
- 5. Adicionar análises estática de código ao projeto (_Findbugs_ no caso).
- 6. ...
+ 5. Adicionar análises estática de código ao projeto (_Findbugs_ e _Checkstyle_ no caso).
+ 6. Criar testes unitários com _Junit_ e _Mockito_.
+ 7. Criar testes sistêmicos com _Jmeter_, em um ambiente de homologação.
+ 8. Criar um _Dockerfile_ e um _docker-compose_ para a entrega final.
